@@ -1,0 +1,23 @@
+{% extends "assignment2_app/base.html" %}
+
+{% block main_body %}
+{% if thesis %}
+
+<p>
+    <table border="2" width="100%">
+      <col style="width:20%">
+      <col style="width:80%">
+      <tbody>
+        <tr>
+          <td><str>Thesis Text</str></td>
+          <td>{{ thesis.text }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+
+  {% else %}
+  <h1>Something wrong</h1>
+  {% endif %}
+
+  {% endblock %}

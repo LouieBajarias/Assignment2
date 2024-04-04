@@ -1,0 +1,50 @@
+{% extends "assignment2_app/base.html" %}
+
+{% block page_title %}
+Theses
+{% endblock %}
+
+{% block page_heading %}
+<h1><str>Available Projects</str></h1>
+{% endblock %}
+
+{% block main_body %}
+  
+
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      }
+    th, td {
+      padding: 15px;
+      }
+    </style>
+
+
+<table border="2" width="100%">
+  <col style="width:10%">
+  <col style="width:80%">
+
+  <tr>
+    <th>Title</th>
+    <th>Small Description</th>
+    <th>Supervisor Name</th>
+  </tr>
+
+    {% for proj in proj_list %}
+
+    <table border="2" width="100%">
+      <col style="width:10%">
+      <col style="width:80%">
+    
+      <tr>
+        <td>{{proj.title}}</td>
+        <td>{{proj.desc}}</td>
+        <td>{{proj.sup_name}}</td>
+      </tr>
+    </table>
+  {% endfor %}
+  
+
+{% endblock %}
